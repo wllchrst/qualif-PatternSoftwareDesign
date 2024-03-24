@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetTableByUserIDSongID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="songID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTableByUserIDSongIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTableByUserIDSongIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="songID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateTableResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserTransactionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllTable">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllTableResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetTableByUserIDSongIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTableByUserIDSongID" />
+  </wsdl:message>
+  <wsdl:message name="GetTableByUserIDSongIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTableByUserIDSongIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateTableSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateTable" />
+  </wsdl:message>
+  <wsdl:message name="CreateTableSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserTransaction" />
+  </wsdl:message>
+  <wsdl:message name="GetUserTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllTableSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllTable" />
+  </wsdl:message>
+  <wsdl:message name="GetAllTableSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllTableResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TableServiceSoap">
+    <wsdl:operation name="GetTableByUserIDSongID">
+      <wsdl:input message="tns:GetTableByUserIDSongIDSoapIn" />
+      <wsdl:output message="tns:GetTableByUserIDSongIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTable">
+      <wsdl:input message="tns:CreateTableSoapIn" />
+      <wsdl:output message="tns:CreateTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserTransaction">
+      <wsdl:input message="tns:GetUserTransactionSoapIn" />
+      <wsdl:output message="tns:GetUserTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTable">
+      <wsdl:input message="tns:GetAllTableSoapIn" />
+      <wsdl:output message="tns:GetAllTableSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TableServiceSoap" type="tns:TableServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTableByUserIDSongID">
+      <soap:operation soapAction="http://tempuri.org/GetTableByUserIDSongID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTable">
+      <soap:operation soapAction="http://tempuri.org/CreateTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserTransaction">
+      <soap:operation soapAction="http://tempuri.org/GetUserTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTable">
+      <soap:operation soapAction="http://tempuri.org/GetAllTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TableServiceSoap12" type="tns:TableServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTableByUserIDSongID">
+      <soap12:operation soapAction="http://tempuri.org/GetTableByUserIDSongID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTable">
+      <soap12:operation soapAction="http://tempuri.org/CreateTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserTransaction">
+      <soap12:operation soapAction="http://tempuri.org/GetUserTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTable">
+      <soap12:operation soapAction="http://tempuri.org/GetAllTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TableService">
+    <wsdl:port name="TableServiceSoap" binding="tns:TableServiceSoap">
+      <soap:address location="https://localhost:44383/WebService/TableService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TableServiceSoap12" binding="tns:TableServiceSoap12">
+      <soap12:address location="https://localhost:44383/WebService/TableService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetAllSongs">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllSongsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllSongsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSong">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSongResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSongResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSong">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="songName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="price" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSongResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateSongResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateSong">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="songName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="price" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateSongResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateSongResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteSong">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteSongResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteSongResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAllSongsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllSongs" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSongsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllSongsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSongSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSong" />
+  </wsdl:message>
+  <wsdl:message name="GetSongSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSongResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSongSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSong" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSongSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSongResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateSongSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateSong" />
+  </wsdl:message>
+  <wsdl:message name="CreateSongSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateSongResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSongSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteSong" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSongSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteSongResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SongServiceSoap">
+    <wsdl:operation name="GetAllSongs">
+      <wsdl:input message="tns:GetAllSongsSoapIn" />
+      <wsdl:output message="tns:GetAllSongsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSong">
+      <wsdl:input message="tns:GetSongSoapIn" />
+      <wsdl:output message="tns:GetSongSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSong">
+      <wsdl:input message="tns:UpdateSongSoapIn" />
+      <wsdl:output message="tns:UpdateSongSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSong">
+      <wsdl:input message="tns:CreateSongSoapIn" />
+      <wsdl:output message="tns:CreateSongSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSong">
+      <wsdl:input message="tns:DeleteSongSoapIn" />
+      <wsdl:output message="tns:DeleteSongSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SongServiceSoap" type="tns:SongServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllSongs">
+      <soap:operation soapAction="http://tempuri.org/GetAllSongs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSong">
+      <soap:operation soapAction="http://tempuri.org/GetSong" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSong">
+      <soap:operation soapAction="http://tempuri.org/UpdateSong" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSong">
+      <soap:operation soapAction="http://tempuri.org/CreateSong" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSong">
+      <soap:operation soapAction="http://tempuri.org/DeleteSong" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SongServiceSoap12" type="tns:SongServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllSongs">
+      <soap12:operation soapAction="http://tempuri.org/GetAllSongs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSong">
+      <soap12:operation soapAction="http://tempuri.org/GetSong" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSong">
+      <soap12:operation soapAction="http://tempuri.org/UpdateSong" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSong">
+      <soap12:operation soapAction="http://tempuri.org/CreateSong" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSong">
+      <soap12:operation soapAction="http://tempuri.org/DeleteSong" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SongService">
+    <wsdl:port name="SongServiceSoap" binding="tns:SongServiceSoap">
+      <soap:address location="https://localhost:44383/WebService/SongService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SongServiceSoap12" binding="tns:SongServiceSoap12">
+      <soap12:address location="https://localhost:44383/WebService/SongService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

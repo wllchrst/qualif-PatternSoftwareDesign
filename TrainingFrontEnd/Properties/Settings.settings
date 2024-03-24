@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TrainingFrontEnd.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="TrainingFrontEnd_UserService_UserService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://localhost:44383/WebService/UserService.asmx</Value>
+    </Setting>
+    <Setting Name="TrainingFrontEnd_SongService_SongService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://localhost:44383/WebService/SongService.asmx</Value>
+    </Setting>
+    <Setting Name="TrainingFrontEnd_TableService_TableService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://localhost:44383/WebService/TableService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
